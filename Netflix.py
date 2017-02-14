@@ -53,7 +53,7 @@ def netflix_eval(reader, writer) :
     predictions = []
     actual = []
 
-    # iterate throught the file reader line by line
+    # iterate through the file reader line by line
     for line in reader:
     # need to get rid of the '\n' by the end of the line
         line = line.strip()
