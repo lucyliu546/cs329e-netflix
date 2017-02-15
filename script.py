@@ -24,4 +24,4 @@ def create_cache(filename):
     print(cache)
 
 # YEAR_OF_RATING
-create_cache("cache-yearCustomerRatedMovie.pickle")
+create_cache("cache-averageMovieRating.pickle")
