@@ -10,7 +10,6 @@ from requests import get
 from os import path
 from numpy import sqrt, square, mean, subtract
 
-'''
 def create_cache(filename):
     """
     filename is the name of the cache file to load
@@ -32,16 +31,23 @@ def create_cache(filename):
 
 
 AVERAGE_RATING = 3.60428996442
+
+# {(customer, movie): rating}
 ACTUAL_CUSTOMER_RATING = create_cache(
     "cache-actualCustomerRating.pickle")
+
+# {(movie, year): avg rating in that year}
 AVERAGE_MOVIE_RATING_PER_YEAR = create_cache(
     "cache-movieAverageByYear.pickle")
+
+# {(customer, movie): year of rating}
 YEAR_OF_RATING = create_cache("cache-yearCustomerRatedMovie.pickle")
+
+
 CUSTOMER_AVERAGE_RATING_YEARLY = create_cache(
     "cache-customerAverageRatingByYear.pickle")
-'''
 
-actual_scores_cache ={10040: {2417853: 1, 1207062: 2, 2487973: 3}}
+actual_scores_cache = {10040: {2417853: 1, 1207062: 2, 2487973: 3}}
 movie_year_cache = {10040: 1990}
 decade_avg_cache = {1990: 2.4}
 
@@ -76,4 +82,3 @@ def netflix_eval(reader, writer) :
     # calculate rmse for predications and actuals
     rmse = sqrt(mean(square(subtract(predictions, actual))))
     writer.write(str(rmse)[:4] + '\n')
-
