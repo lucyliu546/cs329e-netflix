@@ -67,7 +67,7 @@ def netflix_eval(reader, writer) :
             avg_cust_rating = avg_cust_rating_cache[int(current_customer)]
 
             # make prediction
-            prediction = 3.7 + (avg_movie_rating - 3.7) + (avg_cust_rating - 3.7)
+            prediction = int((3.7 + (avg_movie_rating - 3.7) + (avg_cust_rating - 3.7)) * 100) / 100.0
 
             predictions.append(prediction)
             actual.append(actual_scores_cache[(int(current_customer),int(current_movie))])
