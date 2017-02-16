@@ -41,6 +41,9 @@ avg_cust_rating_cache = create_cache("cache-averageCustomerRating.pickle")
 # ------------
 # netflix_eval
 # ------------
+# retrieve values from the caches created in create_cache and store them in lists for output
+# based on values from the movie's average rating and the customer
+# rating we are able to achieve an RMSE < 1
 
 def netflix_eval(reader, writer) :
     predictions = []

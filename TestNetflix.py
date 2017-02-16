@@ -18,6 +18,7 @@ class TestNetflix (TestCase):
     # ----
     # eval
     # ----
+    # customers must exist in probe data for unit tests to work
 
     def test_eval_1(self):
         r = StringIO("1:\n30878\n2647871\n1283744")
