@@ -1,3 +1,69 @@
+commit ac6126591813ad5af2cb601de48ce55260d74c70
+Author: Lucy Liu <lucyliu546@gmail.com>
+Date:   Thu Feb 16 15:17:38 2017 -0600
+
+    Recreated Netflix.html and added comments
+
+commit 2a11ad27d3381e431b2cf028cc4bf0ac2bcca345
+Author: Lucy Liu <lucyliu546@gmail.com>
+Date:   Thu Feb 16 04:27:11 2017 -0600
+
+    Created unit tests and generated coverage file
+
+commit 45ba0096f6005498cfb4a4e89abacbbe62d5f0de
+Author: boydchristopher7 <christopher.boyd@utexas.edu>
+Date:   Wed Feb 15 23:28:37 2017 -0600
+
+    Fixed acceptance tests
+
+commit 33bc915a7d48eed41177b688b1fb63f300eb44d7
+Author: boydchristopher7 <christopher.boyd@utexas.edu>
+Date:   Wed Feb 15 23:04:16 2017 -0600
+
+    actual scores broken
+
+commit 5f1f221ce83d78d4b14958ed9fb206387077d217
+Author: boydchristopher7 <boydchristopher7@gmail.com>
+Date:   Wed Feb 15 15:16:47 2017 -0600
+
+    Changes so far
+
+commit e8f11eb6b088897198334930910ff2d6aa84aae3
+Author: boydchristopher7 <boydchristopher7@gmail.com>
+Date:   Wed Feb 15 15:09:28 2017 -0600
+
+    More Changes
+
+commit 5fb637a354a416058644f5921ed42936d6354229
+Author: boydchristopher7 <boydchristopher7@gmail.com>
+Date:   Wed Feb 15 14:37:24 2017 -0600
+
+    script.py add
+
+commit be441524d34bef49fd592b11ca1db2e3cb4ac58a
+Author: boydchristopher7 <christopher.boyd@utexas.edu>
+Date:   Wed Feb 15 13:18:08 2017 -0600
+
+    Adding changes from this morning.
+
+commit ac3da605edcab7f0086e50c7919a7a1453058020
+Author: Christopher Boyd <boydc7@cs.utexas.edu>
+Date:   Tue Feb 14 16:23:12 2017 -0600
+
+    As of 2/14/17 16:23
+
+commit c4ffc06b64927c429caef1977c086bf9c8781a1f
+Author: Christopher Boyd <boydc7@cs.utexas.edu>
+Date:   Tue Feb 14 16:03:47 2017 -0600
+
+    Three identical unit tests
+
+commit a3776fa4c7969d5e2dd0bdeac13dca7d2bcf656e
+Author: Christopher Boyd <boydc7@cs.utexas.edu>
+Date:   Tue Feb 14 15:58:54 2017 -0600
+
+    First commit
+
 commit 65e9c2bb0bf171e974151bd2babf9d05ffb581da
 Author: lucyliu546 <lucyliu546@gmail.com>
 Date:   Tue Feb 14 15:39:40 2017 -0600
