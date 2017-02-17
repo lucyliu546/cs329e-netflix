@@ -29,21 +29,31 @@ def create_cache(filename):
 
     return cache
 
+
+AVERAGE_RATING = 3.60428996442
+
 # {(customer, movie): rating}
-actual_scores_cache = create_cache(
+ACTUAL_CUSTOMER_RATING = create_cache(
     "cache-actualCustomerRating.pickle")
 
-avg_movie_rating_cache = create_cache(
-    "cache-averageMovieRating.pickle")
+# {(movie, year): avg rating in that year}
+AVERAGE_MOVIE_RATING_PER_YEAR = create_cache(
+    "cache-movieAverageByYear.pickle")
 
-avg_cust_rating_cache = create_cache("cache-averageCustomerRating.pickle")
+# {(customer, movie): year of rating}
+YEAR_OF_RATING = create_cache("cache-yearCustomerRatedMovie.pickle")
+
+
+CUSTOMER_AVERAGE_RATING_YEARLY = create_cache(
+    "cache-customerAverageRatingByYear.pickle")
+
+actual_scores_cache = {10040: {2417853: 1, 1207062: 2, 2487973: 3}}
+movie_year_cache = {10040: 1990}
+decade_avg_cache = {1990: 2.4}
 
 # ------------
 # netflix_eval
 # ------------
-# retrieve values from the caches created in create_cache and store them in lists for output
-# based on values from the movie's average rating and the customer
-# rating we are able to achieve an RMSE < 1
 
 def netflix_eval(reader, writer) :
     predictions = []
@@ -57,25 +67,18 @@ def netflix_eval(reader, writer) :
         if line[-1] == ':':
 		# It's a movie
             current_movie = line.rstrip(':')
-
-            # get average movie rating
-            avg_movie_rating = avg_movie_rating_cache[int(current_movie)]
+            pred = movie_year_cache[int(current_movie)]
+            pred = (pred // 10) * 10
+            prediction = decade_avg_cache[pred]
             writer.write(line)
             writer.write('\n')
         else:
 		# It's a customer
             current_customer = line
-
-            #get average customer rating
-            avg_cust_rating = avg_cust_rating_cache[int(current_customer)]
-
-            # make prediction
-            prediction = int((3.7 + (avg_movie_rating - 3.7) + (avg_cust_rating - 3.7)) * 100) / 100.0
-
             predictions.append(prediction)
-            actual.append(actual_scores_cache[(int(current_customer),int(current_movie))])
-            writer.write(str(prediction)) 
-            writer.write('\n')
+            actual.append(actual_scores_cache[int(current_movie)][int(current_customer)])
+            writer.write(str(prediction))
+            writer.write('\n')	
     # calculate rmse for predications and actuals
     rmse = sqrt(mean(square(subtract(predictions, actual))))
     writer.write(str(rmse)[:4] + '\n')
